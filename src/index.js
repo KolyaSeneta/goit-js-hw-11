@@ -5,7 +5,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import templateMarkup from "./markup.js";
 import axios from 'axios';
 
-const AUTH_TOKEN = '32700035-2643abb13134080679caa7410';
+const AUTH_TOKEN = '15963346-ad2ef4852e1004dd885e00ad5';
 const instance = axios.create({
   baseURL: 'https://pixabay.com/api'
  });
