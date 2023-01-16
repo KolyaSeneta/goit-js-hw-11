@@ -11,7 +11,7 @@ const instance = axios.create({
  });
 const PER_PAGE = '&per_page=40';
 const otherParams = '&image_type=photo&orientation=horizontal&safesearch=true';
-
+const noneBtn = document.querySelector(`.none-btn`)
 const searchForm = document.querySelector(".search-form");
 const searchInput = document.querySelector('input[name="searchQuery"]');
 const btnSubmit = document.querySelector('button[type="submit"]');
@@ -21,6 +21,7 @@ const gallery = document.querySelector(".gallery");
 searchInput.classList.add("search-form__input");
 btnSubmit.textContent = "";
 btnLoad.classList.add("is-hidden");
+
 
 let name = "";
 let page = 1;
@@ -59,7 +60,9 @@ async function getData() {
     console.log(loadHits);
     if (loadHits === response.data.totalHits && response.data.hits.length > 0) {
       btnLoad.classList.add("is-hidden"); 
-      Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");   
+      Notiflix.Notify.info("We're sorry, but you've reached the end of search results."); 
+      btnLoad.style.display = 'none';
+  
     }
     if (page === 1){
       btnLoad.classList.remove("is-hidden");
